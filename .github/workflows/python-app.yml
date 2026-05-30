@@ -1,19 +1,19 @@
 name: python automation check
 on:
   push:
-    branches("main")
+    branches: ["main"]
 jobs: 
   test-environment:
-    run on: ubuntu-latest
+    runs-on: ubuntu-latest
     steps:
-      name: check code
-      uses: actions/checkout@
+      - name: check code
+        uses: actions/checkout@v4
 
-      name: setup python
-      uses: actions/setup-python@v3
-      with: 
-        python version"3.10"
-      name: Rund and validate python files
-      run:
-        python test.py
+      - name: setup python
+        uses: actions/setup-python@v3
+        with: 
+          Python-version: "3.10"
+      - name: Rund and validate python files
+        run: |
+          python test.py
         
